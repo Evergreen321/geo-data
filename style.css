@@ -1,0 +1,44 @@
+html {
+  font-size: 100px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(
+    90deg,
+    rgba(125, 219, 238, 1) 22%,
+    rgba(60, 182, 255, 1) 62%
+  );
+}
+
+h1,
+h2 {
+  color: #444;
+  font-weight: 100;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0 0;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+.arrow {
+  width: 250px;
+  overflow: hidden;
+  transition: all 0.2s;
+  transform: rotate(0deg);
+  display: inline-block;
+}
+
+.units {
+  font-size: 15px;
+}
