@@ -4,7 +4,7 @@ const altitude = document.querySelector(".altitude-value");
 const arrow = document.querySelector(".arrow");
 
 navigator.geolocation.watchPosition((data) => {
-  // console.log(data);
+  console.log(data);
 
   if (data.altitude) {
     altitude.textContent = data.coords.altitude;
