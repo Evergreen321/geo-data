@@ -1,10 +1,18 @@
 "use strict";
+
+// COMPASS
 const speed = document.querySelector(".speed-value");
 const altitude = document.querySelector(".altitude-value");
 const arrow = document.querySelector(".arrow");
 
+const latitudeComponent = document.querySelector(".latitude");
+const longitudeComponent = document.querySelector(".longitude");
+
 navigator.geolocation.watchPosition((data) => {
   console.log(data);
+
+  const latitude = data.coords.latitude;
+  const longitude = data.coords.longitude;
 
   if (data.altitude) {
     altitude.textContent = data.coords.altitude;
@@ -19,4 +27,7 @@ navigator.geolocation.watchPosition((data) => {
   }
 
   arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+
+  latitudeComponent.textContent = latitude;
+  longitudeComponent.textContent = longitude;
 });
