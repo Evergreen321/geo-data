@@ -8,14 +8,18 @@
 // const latitudeComponent = document.querySelector(".latitude");
 // const longitudeComponent = document.querySelector(".longitude");
 
-let latitude;
-let longitude;
 navigator.geolocation.watchPosition((data) => {
   console.log(data);
 
-  latitude = data.coords.latitude;
-  longitude = data.coords.longitude;
+  const latitude = data.coords.latitude;
+  const longitude = data.coords.longitude;
+
+  localStorage.setItem("latitude", `${latitude}`);
+  localStorage.setItem("longitude", `${longitude}`);
 });
+
+const latitude = Number(localStorage.getItem("latitude"));
+const longitude = Number(localStorage.getItem("longitude"));
 
 //   if (data.altitude) {
 //     altitude.textContent = data.coords.altitude;
@@ -39,7 +43,7 @@ navigator.geolocation.watchPosition((data) => {
 function initMap() {
   let myPosition = { lat: latitude, lng: longitude };
   let map = new google.maps.Map(document.querySelector(".map"), {
-    zoom: 4,
+    zoom: 10,
     center: myPosition,
   });
 
