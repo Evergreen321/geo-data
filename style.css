@@ -1,4 +1,5 @@
-html {
+/* COMPASS */
+/* html {
   font-size: 100px;
 }
 
@@ -41,4 +42,10 @@ h2 {
 
 .units {
   font-size: 15px;
+} */
+
+/* MAP */
+.map {
+  width: 100%;
+  height: 400px;
 }
